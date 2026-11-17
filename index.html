@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Frontend practice project</p>
+      <h1>Rock Paper Scissors</h1>
+      <p class="intro">Play against the computer. First choose your move - the computer picks at random.</p>
+    </header>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <article class="score-card player">
+        <span>You</span>
+        <strong id="playerScore">0</strong>
+      </article>
+      <article class="score-card">
+        <span>Draws</span>
+        <strong id="drawScore">0</strong>
+      </article>
+      <article class="score-card computer">
+        <span>Computer</span>
+        <strong id="computerScore">0</strong>
+      </article>
+    </section>
+
+    <section class="arena" aria-live="polite">
+      <div class="hand-display">
+        <div class="hand">
+          <span class="hand-label">You</span>
+          <span id="playerHand" class="hand-emoji">?</span>
+        </div>
+        <span class="versus">vs</span>
+        <div class="hand">
+          <span class="hand-label">Computer</span>
+          <span id="computerHand" class="hand-emoji">?</span>
+        </div>
+      </div>
+      <p id="resultText" class="result-text">Make your move to start the game.</p>
+    </section>
+
+    <section class="controls" aria-label="Choose your move">
+      <button class="choice-button" type="button" data-choice="rock" aria-label="Rock (shortcut R)">
+        <span class="choice-emoji">🪨</span>
+        <span>Rock</span>
+      </button>
+      <button class="choice-button" type="button" data-choice="paper" aria-label="Paper (shortcut P)">
+        <span class="choice-emoji">✋</span>
+        <span>Paper</span>
+      </button>
+      <button class="choice-button" type="button" data-choice="scissors" aria-label="Scissors (shortcut S)">
+        <span class="choice-emoji">✌️</span>
+        <span>Scissors</span>
+      </button>
+    </section>
+
+    <p class="shortcut-hint">Keyboard: <kbd>R</kbd> rock, <kbd>P</kbd> paper, <kbd>S</kbd> scissors</p>
+
+    <section class="history-card" aria-labelledby="history-title">
+      <div class="history-header">
+        <h2 id="history-title">Round history</h2>
+        <button id="resetButton" class="reset-button" type="button">Reset scores</button>
+      </div>
+      <p id="roundCount" class="round-count">0 rounds played</p>
+      <ol id="historyList" class="history-list"></ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
